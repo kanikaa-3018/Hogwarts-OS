@@ -70,7 +70,7 @@ Install individual magical components (Sorting Hat, Marauder’s Map, Owl Post, 
 > ✅ Best for developers and users who want to add only selected features  
 > 💡 Each module comes with installation guide, setup script & dependencies
 
-📁 Visit the [`modules/`](#) folder to get started!
+📁 Visit the [`modules/`](#https://github.com/nishantharkut/Hogwarts-OS/tree/main/Modules) folder to get started!
 
 ---
 
