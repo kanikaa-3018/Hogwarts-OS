@@ -1,0 +1,24 @@
+{
+  "name": "my-electron-app",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.8.4",
+    "boolean": "^3.2.0",
+    "cowsay": "^1.6.0",
+    "dotenv": "^16.4.7",
+    "edge-tts": "^1.0.1",
+    "electron": "^35.1.2",
+    "figlet-cli": "^0.2.0",
+    "inquirer": "^12.5.0",
+    "say": "^0.16.0"
+  }
+}

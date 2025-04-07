@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owl Delivery</title>
+    <style>
+        body {
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            //position: relative;
+        }
+
+        /* 🦉 Owl */
+        .owl {
+            position: absolute;
+            top: -200px;
+            //height: 500px;
+            left: 50%;
+            transform: translateX(-50%);
+            //transform: translateY(40%);
+            width: 350px; /* Increased size */
+            animation: fly-in 3s ease-in-out forwards;
+       
+        }
+
+        /* 📜 Folded Paper (Above Owl, Like It's Holding It) */
+        .folded-paper {
+            position:absolute;
+            top:-370px; /* Adjusted above the owl */
+            left: calc(50% - 120px);
+            transform: translateX(-50%);
+            transform: translateY(70%);
+            width: 150px;
+            height:120px;
+            //background : url('blob:null/abc61146-89ce-4b89-9ebd-b99f99e2250d') no-repeat center/contain;
+            //background: url('https://img.freepik.com/premium-psd/rolled-business-newspaper-with-headline-news-isolated-daily-newspaper-mockup-concept-png-transparency-with-shadow_185216-1033.jpg') no-repeat center/contain;
+           // border: 2px solid black;
+            opacity: 1; /* Appears immediately */
+            z-index:10;
+            //transition: opacity 0.8s ease-in-out;
+            animation: fly-in 3s ease-in-out forwards; /* Moves along with owl */
+        }
+         .folded-paper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* 📜 Unfolding Effect */
+        .unfolded-paper {
+            width: 600px;
+            height: 400px;
+            background: white; /* Plain white unfolded paper */
+            border: 2px solid black;
+            transition: width 1.5s ease-in-out, height 1.5s ease-in-out;
+        }
+
+        /* 🦉 Fly-in Animation (Owl & Paper Together) */
+        @keyframes fly-in {
+            0% { top: -300px; opacity: 0; }
+            50% { opacity: 1; }
+            100% { top: 50px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Owl -->
+    <img src="https://i.pinimg.com/originals/96/e6/12/96e612ebf5056c7bcb416a25cfc96938.gif" class="owl" alt="Owl carrying newspaper">
+    <div class="folded-paper" id="foldedPaper">
+        <img id="paperImage" alt="Rolled Newspaper">
+    </div>
+    <!-- Newspaper Above the Owl -->
+        <script>
+        const { ipcRenderer } = require("electron");
+        const path = require("path");
+
+        // Set local image dynamically
+        document.getElementById("paperImage").src = `file://${path.join(__dirname, "newspaper.png")}`;
+        // Unfold effect: Hide the folded paper image and expand a plain white paper
+        setTimeout(() => {
+            let paper = document.getElementById('foldedPaper');
+            paper.innerHTML = '';
+            paper.style.background = "white"; // Remove the image, just a blank paper
+            paper.classList.add("unfolded-paper"); // Expand the paper
+        }, 4000);
+
+        // Notify Electron to open the main app
+        setTimeout(() => {
+            ipcRenderer.send("animation-finished");
+        }, 5000);
+    </script>
+</body>
+</html>

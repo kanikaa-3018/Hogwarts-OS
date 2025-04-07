@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogwarts OS - The Daily Prophet</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
+
+        body {
+            font-family: 'IM Fell English SC', serif;
+            background: url('https://i.pinimg.com/736x/8a/53/24/8a5324f307259218505ba69cd4734d0e.jpg') no-repeat center/cover;
+            color: #000;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow: auto;
+        }
+
+        /* Header */
+        .header {
+            width: 100%;
+            background: #f5f1e3;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 3px solid black;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            font-size: 3em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #4A2605;
+            margin: 5px;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            color: #333;
+            font-style: italic;
+        }
+
+        /* Newspaper content */
+        .newspaper {
+            border: 3px solid black;
+            padding: 25px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
+            background-color: #f5f1e3;
+            font-size: 1.2em;
+            text-align: justify;
+            line-height: 1.8;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .weather-info {
+            background: rgba(253, 253, 253, 0.2);
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin-top: 10px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+            font-size: 1.2em;
+            display: flex;
+            gap: 15px;
+            margin: 8px;
+        }
+
+        /* Wanted Posters Section */
+        .wanted-section {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .wanted-title {
+            font-size: 2em;
+            color: #7d0202;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            margin-bottom: 10px;
+        }
+
+        .wanted-posters {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .wanted-posters img {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            border: 3px solid black;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .wanted-posters img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        .footer {
+            width: 100%;
+            background: #f5f1e3;
+            padding: 10px;
+            text-align: center;
+            border-top: 3px solid black;
+            margin-top: 30px;
+            font-size: 1em;
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>🧙‍♂️ The Daily Prophet</h1>
+        <p class="tagline">"The Wizarding World's Premier Newspaper Since 1883"</p>
+    </div>
+
+    <pre id="ascii-art">Loading Hogwarts Crest...</pre>
+
+    <div class="weather-info">
+        <p id="location">📍 Location: Hogwarts</p>
+        <p id="date-time">⏳ Time: Loading...</p>
+        <p id="weather">🌦️ Weather: Fetching...</p>
+    </div>
+
+    <div class="newspaper" id="ai-response">Loading magical news...</div>
+
+    <div class="wanted-section">
+        <h2 class="wanted-title">🚨 Wanted Posters 🚨</h2>
+        <div class="wanted-posters">
+            <img src="https://i.pinimg.com/474x/20/e8/13/20e813e468eed28aa17fd0108f33c0ca.jpg" alt="Wanted: Bellatrix Lestrange">
+            <img src="https://i.pinimg.com/236x/84/f6/9e/84f69efc96923f19cb27e7e8bd66319a.jpg" alt="Wanted: Fenrir Greyback">
+            <img src="https://i.pinimg.com/236x/a9/27/80/a92780d32727eecd7fde133687768cc4.jpg" alt="Wanted: Lucius Malfoy">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2024 The Daily Prophet. All rights reserved. | Ministry of Magic Approved</p>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>

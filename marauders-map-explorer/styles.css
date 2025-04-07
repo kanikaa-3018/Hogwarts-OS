@@ -1,0 +1,309 @@
+body {
+    background-image: url('./resources/images/brown-papyrus-paper.jpg');
+    background-size: cover;
+    font-family: 'Georgia', serif;
+    color: black;
+    text-align: center;
+}
+
+h1 {
+    font-size: 26px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#file-viewer {
+    width: 80%;
+    /* margin: auto; */
+    padding: 10px;
+    border: 2px solid black;
+    background-color: rgba(255, 255, 224, 0.8);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    min-height: 700px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* ✨ Hidden Passage Animation */
+.file-item {
+    background: rgba(255, 255, 224, 0.5);
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+    font-weight: bold;
+    height: 47.36px;
+    transition: all 0.4s ease-in-out;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes magicUnlock {
+    from { transform: scale(0.5); opacity: 0; filter: blur(10px); }
+    to { transform: scale(1); opacity: 1; filter: blur(0px); }
+}
+
+#xp-container {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+#xp-bar {
+    width: 0%;
+    height: 5px;
+    background: gold;
+    transition: width 0.3s;
+}
+
+.unlock-effect {
+    animation: magicUnlock 1s ease-in-out;
+}
+
+.file-item:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 224, 1);
+    text-shadow: 0 0 10px gold;
+}
+
+.file-item.dragging {
+    opacity: 0.5;
+    transform: scale(1.05);
+    border: 2px dashed black;
+}
+
+#container {
+    display: flex;
+    height: 100vh;
+}
+
+#sidebar {
+    width: 250px;
+    background: rgba(255, 255, 224, 0.9);
+    padding: 10px;
+    border-right: 2px solid black;
+    overflow-y: auto;
+    text-align: left;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    height: 880px;
+    overflow-x: auto;
+}
+
+#file-viewer {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.dir-item {
+    cursor: pointer;
+    padding: 5px;
+    font-weight: bold;
+    height:47.36px;
+    width: 254.47px;
+}
+
+.dir-item:hover {
+    background: rgba(255, 255, 100, 0.5);
+}
+
+.sub-dir {
+    padding-left: 15px;
+}
+
+.dir-item[data-expanded="false"]::before {
+    content: "▶ ";
+}
+
+.dir-item[data-expanded="true"]::before {
+    content: "▼ ";
+}
+
+.dir-item[data-expanded] {
+    user-select: none;
+}
+
+
+#nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 224, 0.8);
+    border-bottom: 2px solid black;
+}
+.dark-mode #nav-bar{
+    background-color: rgba(50, 50, 50, 0.8);
+    background-size: cover;
+    color: #ffffff;
+}
+#back-btn {
+    padding: 5px 10px;
+    cursor: pointer;
+    background: black;
+    color: white;
+    border: none;
+}
+
+#breadcrumb {
+    font-weight: bold;
+}
+
+#search-bar {
+    padding: 5px;
+    border: 1px solid black;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 🚪 Hidden Passage Animation */
+.hidden-passage {
+    animation: passageOpen 1s ease-in-out;
+}
+
+@keyframes passageOpen {
+    from { transform: scale(0.8); opacity: 0.5; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* 🌙 Dark Mode */
+.dark-mode {
+    background-color: #222;
+    background-size: cover;
+    color: #000000;
+}
+
+.dark-mode #sidebar {
+    background-color: rgba(50, 50, 50, 0.8);
+    background-size: cover;
+    color: #ffffff;
+}
+
+.dark-mode #file-viewer {
+    background-color: rgba(50, 50, 50, 0.8);
+}
+
+.dark-mode .file-item {
+    background: rgba(100, 100, 100, 0.5);
+    color: white;
+}
+
+.dark-mode .file-item:hover {
+    background: rgba(150, 150, 150, 1);
+}
+
+/* 📂 Custom File Icons */
+.file-item[data-type="folder"]::before {
+    content: "📁 ";
+}
+
+.file-item[data-type="image"]::before {
+    content: "🖼️ ";
+}
+
+.file-item[data-type="text"]::before {
+    content: "📜 ";
+}
+
+.secret-folder.locked {
+    opacity: 0;
+    filter: blur(10px);
+    transform: scale(0.8);
+    transition: opacity 1.5s ease-in-out, filter 1.5s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.secret-folder.unlocked {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(255, 223, 0, 0.8);
+    animation: glowUnlock 1s infinite alternate;
+}
+
+/* Glowing animation for magical effect */
+@keyframes glowUnlock {
+    from { box-shadow: 0 0 10px rgba(255, 223, 0, 0.5); }
+    to { box-shadow: 0 0 20px rgba(255, 223, 0, 1); }
+}
+
+.sidebar-folder {
+    margin-left: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.folder-toggle {
+    cursor: pointer;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.folder-name {
+    font-weight: bold;
+}
+
+.sidebar-subfolders {
+    margin-left: 15px;
+    display: none;
+}
+
+.file-preview {
+    position: absolute;
+    background: #fff8dc;
+    border: 1px solid black;
+    padding: 5px;
+    max-width: 300px;
+    max-height: 150px;
+    overflow: auto;
+    z-index: 100;
+    font-size: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 5px;
+}
+
+#spell-input-container {
+    display: flex;
+    gap: 8px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#spell-input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+#cast-btn {
+    padding: 10px 16px;
+    border-radius: 8px;
+    background-color: #6b5b95;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#spell-output {
+    white-space: pre-wrap;
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 12px;
+    margin: 10px;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
