@@ -1,6 +1,6 @@
 # 🧙‍♂️ Hogwarts OS – A Magical Linux-Based Operating System
 
-Welcome to **Hogwarts OS**, a fully immersive and wizardry-themed operating system built on top of Linux Mint Cinnamon 21.3. Inspired by the world of **Harry Potter**, this project reimagines the computing experience with a unique blend of **custom themes, spell-based terminal commands, AI-powered tools, gamification, and interactive visuals**.
+Welcome to **Hogwarts OS**, a fully immersive and wizardry-themed operating system built on top of Linux Mint Cinnamon 21.3 edition. Inspired by the world of **Harry Potter**, this project reimagines the computing experience with a unique blend of **custom themes, spell-based terminal commands, AI-powered tools, gamification, and interactive visuals**.
 
 Developed as part of the **Hackanovate Hackathon** at **ABES Institute**, Hogwarts OS is designed to combine fun, functionality, and fantasy for all magic and tech enthusiasts.
 
