@@ -128,7 +128,7 @@ hogwarts-os/
 | 🧠 AI | Agent AI, Akash Chat API |
 | 🐍 Logic | Node.js, Python, Bash |
 | 🎮 Game | Python + Pygame |
-| 🖼️ Graphics | Blender (optional), GIMP, Inkscape |
+| 🖼️ Graphics | GIMP, Inkscape |
 
 ---
 
