@@ -134,7 +134,14 @@ hogwarts-os/
 
 ## 📸 Screenshots
 
-> Coming soon in `/docs/screenshots/`
+<div align="center">
+  <img src="docs/screenshots/Dumbledore AI Assistant.jpg" width="300px" style="margin: 10px;" />
+  <img src="docs/screenshots/Marauder's map AI File Explorer.jpg" width="300px" style="margin: 10px;" />
+  <img src="docs/screenshots/Potion Brewing App Installer.jpg" width="300px" style="margin: 10px;" />
+  <img src="docs/screenshots/Quidditch Game.jpg" width="300px" style="margin: 10px;" />
+  <img src="docs/screenshots/Spell Terminal.png" width="300px" style="margin: 10px;" />
+  <img src="docs/screenshots/Thumbnail.png" width="300px" style="margin: 10px;" />
+</div>
 
 ---
 
