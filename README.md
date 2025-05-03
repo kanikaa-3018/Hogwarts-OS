@@ -133,7 +133,7 @@ hogwarts-os/
 ---
 
 ## 📸 Screenshots
-<img src="docs/screenshots/Dumbledore_AI_Assistant.jpg" width="300px" style="margin: 10px;" />
+<img src="https://github.com/nishantharkut/Hogwarts-OS/blob/main/Docs/Screenshots/Dumbledore_AI_Assistant.jpg" width="300px" style="margin: 10px;" />
 <div align="center">
   <img src="docs/screenshots/Dumbledore_AI_Assistant.jpg" width="300px" style="margin: 10px;" />
   <img src="/docs/screenshots/Marauder's map AI File Explorer.jpg" width="300px" style="margin: 10px;" />
